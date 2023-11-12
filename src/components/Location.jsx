@@ -1,4 +1,6 @@
-const Location = () => {
+import PropTypes from "prop-types";
+
+const Location = ({ location }) => {
   return (
     <section className="bgSpace font-firaCode text-fourth-color flex flex-col items-center gap-10">
       {/*start hero portal */}
@@ -14,7 +16,7 @@ const Location = () => {
       </div>
       {/*end hero portal */}
       {/*start location */}
-      <article className="flex flex-col items-cente justify-center gap-8">
+      <article className="flex flex-col items-cente justify-center gap-8 px-3">
         <form className="flex justify-center">
           <input
             className=" w-60 bg-primary-color/30 border-solid border-2 border-fourth-color outline-none px-2 sm:w-96"
@@ -28,20 +30,28 @@ const Location = () => {
             </span>
           </button>
         </form>
-        <section className="border-2 border-fourth-color py-6 md:w-[650px] lg:w-[800px]">
+        <section className="border-2 border-fourth-color py-6 px-3 md:w-[700px] lg:w-[900px]">
           <h1 className="text-center text-lg pb-7">
-            ¡Welcome to Name Location!
+            ¡Welcome to {location?.name}!
           </h1>
-          <div className="flex flex-col items-center justify-center gap-7 sm:flex-row lg:gap-20">
-            <span className="text-third-color">Type: Closer</span>
-            <span className="text-third-color">Dimension: Unknwq</span>
-            <span className="text-third-color">Population: 1</span>
+          <div className="flex flex-col items-center justify-center px-2 gap-7 sm:gap-5 sm:flex-row lg:gap-10 text-center">
+            <span className="text-third-color">Type: {location?.type}</span>
+            <span className="text-third-color">
+              Dimension: {location?.dimension}
+            </span>
+            <span className="text-third-color">
+              Population: {location?.residents.length}
+            </span>
           </div>
         </section>
       </article>
       {/*end location */}
     </section>
   );
+};
+
+Location.propTypes = {
+  location: PropTypes.object,
 };
 
 export default Location;

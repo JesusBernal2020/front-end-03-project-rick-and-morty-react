@@ -1,0 +1,7 @@
+.bgList {
+  background-image: url("/public/images/background-page.png");
+  min-height: 100vh;
+  background-size: cover;
+  background-position: center;
+  background-repeat: inherit;
+}
