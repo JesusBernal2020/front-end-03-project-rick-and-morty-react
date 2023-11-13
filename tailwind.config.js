@@ -8,6 +8,7 @@ export default {
         "second-color": "#FBFBFB",
         "third-color": "#AEAEAE",
         "fourth-color": "#8EFF8B",
+        "fifthen-color": "#062226",
       },
     },
     fontFamily: {

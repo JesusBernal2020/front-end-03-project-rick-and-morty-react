@@ -20,7 +20,7 @@ function App() {
 
   return (
     <main className="font-firaCode">
-      <Location location={location} />
+      <Location location={location} setLocation={setLocation} />
       <ResidentList residents={location?.residents} />
     </main>
   );
