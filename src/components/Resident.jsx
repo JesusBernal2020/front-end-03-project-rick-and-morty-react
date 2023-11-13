@@ -14,7 +14,7 @@ const Resident = ({ residentUrl }) => {
 
   return (
     <article className="hover:shadow-2xl hover:shadow-fourth-color transition-all ease-in-out border-2 border-fourth-color">
-      <div className=" border-2 border-fourth-color min-w-full relative">
+      <div className=" border-2 border-fourth-color object-contain relative">
         <img src={residentInfo?.image} alt={residentInfo?.name} />
         <div className="flex items-center gap-2 absolute bottom-8 left-1/2 -translate-x-1/2 border-2 border-fourth-color bg-primary-color/40 px-4">
           <div className="h-3 aspect-square bg-fourth-color rounded-full"></div>
