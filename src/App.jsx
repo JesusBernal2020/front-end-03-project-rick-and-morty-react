@@ -8,6 +8,7 @@ import ResidentList from "./components/ResidentList";
 function App() {
   const [location, setLocation] = useState(null);
 
+  //llamado a ña dimecion aleatoria con la funcion getRandomDimension
   useEffect(() => {
     const URL = `https://rickandmortyapi.com/api/location/${getRandomDimension()}`;
 
@@ -18,9 +19,9 @@ function App() {
   }, []);
 
   return (
-    <main>
+    <main className="font-firaCode">
       <Location location={location} />
-      <ResidentList />
+      <ResidentList residents={location?.residents} />
     </main>
   );
 }
