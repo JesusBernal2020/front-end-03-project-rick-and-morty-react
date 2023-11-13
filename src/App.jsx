@@ -35,7 +35,7 @@ function App() {
       ) : (
         <>
           <Location location={location} setLocation={setLocation} />
-          <ResidentList residents={location?.residents} />
+          <ResidentList residents={location?.residents} location={location} />
         </>
       )}
     </main>

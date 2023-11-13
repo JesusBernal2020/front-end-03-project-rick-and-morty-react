@@ -1,6 +1,7 @@
 import axios from "axios";
 import PropTypes from "prop-types";
 import { useEffect, useState } from "react";
+import { statusStyles } from "../utils/status";
 
 const Resident = ({ residentUrl }) => {
   const [residentInfo, setResidentInfo] = useState(null);
@@ -17,8 +18,12 @@ const Resident = ({ residentUrl }) => {
       <div className=" border-2 border-fourth-color object-contain relative">
         <img src={residentInfo?.image} alt={residentInfo?.name} />
         <div className="flex items-center gap-2 absolute bottom-8 left-1/2 -translate-x-1/2 border-2 border-fourth-color bg-primary-color/40 px-4">
-          <div className="h-3 aspect-square bg-fourth-color rounded-full"></div>
-          <span className="text-second-color">Dead</span>
+          <div
+            className={`h-3 aspect-square ${
+              statusStyles[residentInfo?.status]
+            } rounded-full`}
+          ></div>
+          <span className="text-second-color">{residentInfo?.status}</span>
         </div>
       </div>
       <section className=" py-4 flex flex-col gap-3 pl-4 w-72">
@@ -53,5 +58,3 @@ Resident.propTypes = {
 };
 
 export default Resident;
-
-// TODO TERMINAR 1:11:38

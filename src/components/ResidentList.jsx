@@ -1,13 +1,18 @@
 import PropTypes from "prop-types";
 import "./styles/ResidentList.css";
 import Resident from "./Resident";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { paginationLogic } from "../utils/pagination";
 
-const ResidentList = ({ residents }) => {
-  const [currentPage, setCurrentPage] = useState(1);
+const ResidentList = ({ residents, location }) => {
+  const FIRST_PAGE = 1;
+  const [currentPage, setCurrentPage] = useState(FIRST_PAGE);
 
   const { pages, residentsInPage } = paginationLogic(currentPage, residents);
+
+  useEffect(() => {
+    setCurrentPage(FIRST_PAGE);
+  }, [location]);
 
   return (
     <section className="bgList text-fourth-color py-20">
@@ -27,7 +32,9 @@ const ResidentList = ({ residents }) => {
           <button
             key={page}
             onClick={() => setCurrentPage(page)}
-            className="bg-primary-color/20 py-3 px-4 text-white"
+            className={` py-3 px-4 text-white ${
+              currentPage === page ? "bg-fifthen-color" : "bg-primary-color/5"
+            }`}
           >
             {page}
           </button>
@@ -40,6 +47,7 @@ const ResidentList = ({ residents }) => {
 
 ResidentList.propTypes = {
   residents: PropTypes.array,
+  location: PropTypes.object,
 };
 
 export default ResidentList;
