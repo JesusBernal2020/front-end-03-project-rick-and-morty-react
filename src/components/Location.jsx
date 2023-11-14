@@ -18,10 +18,6 @@ const Location = ({ location, setLocation }) => {
       .catch((err) => console.log(err));
   };
 
-  /* const handleSearchLocation = (e) => {
-    setLocationSearch(e.target.value);
-  }; */
-
   const handleSearchLocation = (e) => {
     const searchTerm = e.target.value;
     setLocationSearch(searchTerm);
@@ -42,59 +38,6 @@ const Location = ({ location, setLocation }) => {
     setLocationSearch(selectedLocation.name);
     setSearchResults([]); // Limpiar los resultados después de seleccionar
   };
-
-  if (!location) {
-    return (
-      <div className="text-center">
-        <p>No se encontró la ubicación</p>
-      </div>
-    );
-  }
-
-  /* useEffect(() => {
-    if (!locationSearch) {
-      return; // Evitar la llamada si locationSearch está vacío
-    }
-
-    const URL_SEARCH = `https://rickandmortyapi.com/api/location/?name=${locationSearch}`;
-
-    axios
-      .get(URL_SEARCH)
-      .then(({ data }) => {
-        const newLocation = data.results;
-        const newLocation2 = newLocation.find((nameLocation) =>
-          nameLocation.name.includes(locationSearch)
-        );
-        console.log(newLocation);
-        setLocation(newLocation2 || null); // Usar null si no se encuentra ninguna ubicación
-      })
-      .catch((err) => console.error(err));
-  }, [locationSearch, setLocation]);
-
-  if (!location) {
-    return (
-      <div className="text-center">
-        <p>No se encontró la ubicación</p>
-      </div>
-    );
-  } */
-
-  /*  useEffect(() => {
-    const URL_SEARCH = `https://rickandmortyapi.com/api/location/?name=${locationSearch}`;
-
-    axios
-      .get(URL_SEARCH)
-      .then(({ data }) => {
-        const newLocation = data.results;
-        let newLocation2;
-        for (const nameLocation of newLocation) {
-          newLocation2 = nameLocation.name.includes(locationSearch);
-        }
-        console.log(newLocation);
-        setLocation(newLocation2);
-      })
-      .catch((err) => err);
-  }, [locationSearch]); */
 
   return (
     <section className="bgSpace font-firaCode text-fourth-color flex flex-col items-center gap-10">
@@ -126,11 +69,11 @@ const Location = ({ location, setLocation }) => {
             type="text"
           />
           {searchResults.length > 0 && locationSearch !== "" && (
-            <ul className="absolute z-10 bg-primary-color w-60 border border-fourth-color mt-1">
+            <ul className="absolute z-10 bg-primary-color w-72 border border-fourth-color mt-12 sm:w-96 sm:mr-36">
               {searchResults.map((result) => (
                 <li
                   key={result.id}
-                  className="cursor-pointer p-2 hover:bg-gray-200"
+                  className="cursor-pointer p-2 hover:bg-fourth-color hover:text-primary-color"
                   onClick={() => handleSelectLocation(result)}
                 >
                   {result.name}
