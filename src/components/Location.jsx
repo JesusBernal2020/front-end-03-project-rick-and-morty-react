@@ -81,7 +81,7 @@ const Location = ({ location, setLocation }) => {
               ))}
             </ul>
           )}
-          <button className="bg-fourth-color/40  border-solid border-2 border-fourth-color p-2 sm:flex sm:gap-3 sm:px-5">
+          <button className="bg-fourth-color/40 hover:bg-fourth-color hover:text-primary-color border-solid border-2 border-fourth-color p-2 sm:flex sm:gap-3 sm:px-5">
             <span className="hidden sm:block">Search</span>
             <span className="text-xl px-2">
               <i className="bx bx-search"></i>
