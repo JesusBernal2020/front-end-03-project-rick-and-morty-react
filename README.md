@@ -36,7 +36,7 @@ The core functionalities of the project have been completed, but ongoing enhance
 
 ## Project Access
 
-You can access the deployed project via this [Rick and Morty App](https://weather-app-jbx.netlify.app). Additionally, you have the option to clone the project, install the necessary packages using `npm install`, and run it using `npm run dev`.
+You can access the deployed project via this [Rick and Morty App](https://rick-and-morty-web-react.netlify.app). Additionally, you have the option to clone the project, install the necessary packages using `npm install`, and run it using `npm run dev`.
 
 ## Developers
 
